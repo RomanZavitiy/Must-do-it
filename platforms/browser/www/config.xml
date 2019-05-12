@@ -8,10 +8,10 @@
     </feature>
     <name>mdi</name>
     <description>
-        Hello World sample application that responds to the deviceready event.
+        Must do it app
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="syniak.int@gmail.com" href="#">
+        WW Team
     </author>
     <content src="index.html" />
     <access origin="*" />
