@@ -166,6 +166,19 @@ iframe {
   justify-content: center;
   align-content: center;
 }
+.limiter.ds_none,
+.limiter2.ds_none {
+  display: none;
+}
+
+.limiter2 {
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
 
 .container-login100 {
   width: 100%;  

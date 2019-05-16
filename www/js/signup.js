@@ -19,7 +19,6 @@ const txtUserPass2 = document.getElementById('txtUserPass2');
 
 const btnSignup = document.getElementById('btnSignup');
 
-
 //add sign up event
 btnSignup.addEventListener('click', e => {
 
@@ -27,15 +26,12 @@ btnSignup.addEventListener('click', e => {
   const email = txtUserEmail.value;
   const pass = txtUserPass.value;
   const confPass = txtUserPass2.value;
-  const usName = txtUserName;
+
 
   const auth = firebase.auth();
   let complite = 0;
-  // validate 
 
-  if ( usName.value == "") {
-    $('#txtUserName').parent().addClass('alert-validate');
-  } else { complite++; }
+  // validate -------------------------------------
 
   if ( txtUserEmail.value == "") {
     $('#txtUserEmail').parent().attr('data-validate', 'Email is required').addClass('alert-validate');
@@ -62,7 +58,7 @@ if ( txtUserPass2.value == "" ) {
 // console.log(complite);
 
   // sing up
-if (complite == 4)  { const promis = auth.createUserWithEmailAndPassword(email, pass);
+if (complite == 3)  { const promis = auth.createUserWithEmailAndPassword(email, pass);
   promis.catch(function (e) {
     
     if (e.message == "The email address is already in use by another account.") {
@@ -70,18 +66,32 @@ if (complite == 4)  { const promis = auth.createUserWithEmailAndPassword(email, 
     }
     console.log(e.message);
   });
+  $('.limiter').addClass('ds_none');
+  $('.limiter2').removeClass('ds_none');
 }
 });
 
-// let user = firebase.auth().currentUser;
-// user.updateProfile({
-//   displayName: txtUserName.value
-// }).then(function() {
-//   // Update successful.
-//   console.log("suc");
-// }).catch(function(error) {
-//   // An error happened.
-// });
+  const usName = txtUserName;
+  const btnRegDone = document.getElementById('btnRegDone');
+  
+
+  btnRegDone.addEventListener('click', e => {
+    user = firebase.auth().currentUser;
+
+    //  console.log(user);
+    if ( usName.value == "") {
+      $('#txtUserName').parent().addClass('alert-validate');
+    } 
+    user.updateProfile({
+      displayName: usName.value,
+      // photoURL: "https://example.com/jane-q-user/profile.jpg"
+    }).then(function() {
+      // Update successful
+      console.log('suc');
+    }).catch(function(error) {
+      // An error happened. 
+    });
+  });
 
 //add a realtime listener
 firebase.auth().onAuthStateChanged(firebaseUser => {
