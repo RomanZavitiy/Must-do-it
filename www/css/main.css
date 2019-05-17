@@ -505,3 +505,27 @@ iframe {
     padding: 10px 0;
   }
 } 
+
+
+#btnCamera {
+  color: gray;
+  font-size: 40px;
+}
+#btnPhoto {
+  color: gray;
+  font-size: 40px;
+  float: right;
+}
+
+#btnPhoto:hover,
+#btnCamera:hover {
+  color: #6f42c1;
+}
+#myImg {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  margin: 15px 50% 15px 50%;
+  transform: translate(-50%);
+  background-color: white;
+}

@@ -11,11 +11,14 @@
   };
   firebase.initializeApp(config);
 
+
+  
 // get elements
 const txtUserName = document.getElementById('txtUserName');
 const txtUserEmail = document.getElementById('txtUserEmail');
 const txtUserPass = document.getElementById('txtUserPass');
 const txtUserPass2 = document.getElementById('txtUserPass2');
+const txtUserPhoto = document.getElementById('txtUserPhoto');
 
 const btnSignup = document.getElementById('btnSignup');
 
@@ -57,7 +60,7 @@ if ( txtUserPass2.value == "" ) {
 }
 // console.log(complite);
 
-  // sing up
+  // next
 if (complite == 3)  { const promis = auth.createUserWithEmailAndPassword(email, pass);
   promis.catch(function (e) {
     
@@ -72,25 +75,82 @@ if (complite == 3)  { const promis = auth.createUserWithEmailAndPassword(email, 
 });
 
   const usName = txtUserName;
+  const usPhoto = txtUserPhoto;
+  const btnCamera = document.getElementById('btnCamera');
+
   const btnRegDone = document.getElementById('btnRegDone');
   
+// 
+// zrobić zdjęcia
+  btnCamera.addEventListener('click', e => {
+    navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+      destinationType: Camera.DestinationType.FILE_URI });
+  
+  function onSuccess(imageURI) {
+      var image = document.getElementById('myImg');
+      image.src = imageURI;
+  }
+  
+  function onFail(message) {
+      alert('Failed because: ' + message);
+  }
+  });
 
+// PHOTOS
+const btnPhotos = document.getElementById('btnPhoto');
+
+btnPhotos.addEventListener('click', cameraGetPicture);
+
+function cameraGetPicture() {
+  navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+     destinationType: Camera.DestinationType.FILE_URI,
+     sourceType: Camera.PictureSourceType.PHOTOLIBRARY
+  });
+
+  function onSuccess(imageURI) {
+     var image = document.getElementById('myImg');
+     image.src = imageURI;
+  }
+
+  function onFail(message) {
+     alert('Failed because: ' + message);
+  }
+
+}
+// akceptacja rejestracji
   btnRegDone.addEventListener('click', e => {
     user = firebase.auth().currentUser;
 
+    let complit = 0;
     //  console.log(user);
     if ( usName.value == "") {
       $('#txtUserName').parent().addClass('alert-validate');
+    } else {
+      complit++;
+    }
+
+    // uload img to firebase
+    
+    var photoUri = document.getElementById('myImg').src;
+    var storageRef = firebase.storage().ref('img/photo.jpg');
+
+    storageRef.put(photoUri);
+
+    // UPDATE PROFILE///////////////////////////////////////////////
+    if (complit == 1) {
+      user.updateProfile({
+        displayName: usName.value,
+        // photoURL: photoUri
+      }).then(function() {
+        // Update successful
+        console.log('suc');
+      }).catch(function(error) {
+        // An error happened. 
+      });
     } 
-    user.updateProfile({
-      displayName: usName.value,
-      // photoURL: "https://example.com/jane-q-user/profile.jpg"
-    }).then(function() {
-      // Update successful
-      console.log('suc');
-    }).catch(function(error) {
-      // An error happened. 
-    });
+
+
+
   });
 
 //add a realtime listener
