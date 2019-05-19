@@ -25,86 +25,16 @@
 	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
     <!--===============================================================================================-->
 
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-
+    <link rel="stylesheet" type="text/css" href="css/app.css" />
     <title>Must do it</title>
 </head>
 
 <body>
-		<span id="allert_error"></span>
     <!-- -----------------------------LOGIN---------------- -->
-    <div class="limiter" id="limiter">
-			<div class="wrap-login100 p-l-55 p-r-55 p-t-31 p-b-31">
-				<form class="login100-form validate-form">
-				
-					<span class="login100-form-title p-b-60">
-						Must do it
-					</span>
-
-					<div class="wrap-input100 validate-input m-b-23" data-validate = "Username is reauired">
-						<span class="label-input100">Email</span>
-						<input id="txtEmail" class="input100" type="text" name="username" placeholder="Type your email">
-						<span class="focus-input100" data-symbol="&#xf206;"></span>
-					</div>
-
-					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<span class="label-input100">Password</span>
-						<input id="txtPass" class="input100" type="password" name="pass" placeholder="Type your password">
-						<span class="focus-input100" data-symbol="&#xf190;"></span>
-					</div>
-					
-					<div class="text-right p-t-8 p-b-31">
-						<a href="#">
-							Forgot password?
-						</a>
-					</div>
-					
-					<div class="container-login100-form-btn">
-						<div class="wrap-login100-form-btn">
-							<div class="login100-form-bgbtn"></div>
-							<button id="btnLogin" class="login100-form-btn" type="button">
-								Login
-							</button>
-						</div>
-					</div>
-
-					<div class="txt1 text-center p-t-20 p-b-20">
-						<span>
-							Or Sign Up Using
-						</span>
-					</div>
-
-					<div class="flex-c-m">
-						<a href="#" class="login100-social-item bg1">
-							<i class="fa fa-facebook"></i>
-						</a>
-
-						<a href="#" class="login100-social-item bg2">
-							<i class="fa fa-twitter"></i>
-						</a>
-
-						<a href="#" class="login100-social-item bg3">
-							<i class="fa fa-google"></i>
-						</a>
-					</div>
-
-					<div class="flex-col-c p-t-20">
-						<span class="txt1 p-b-17">
-							Or 
-						</span>
-
-						<a href="signup.html" class="txt2">
-							<span>Sign Up</span>
-						</a>
-					</div>
-				</form>
-			</div>
+    <div class="limiter">
+		<img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="" id="profileImg">
 	</div>
-	
-
-	<div id="dropDownSelect1"></div>
-	
+	<button type="button" id="logOut">Log Out</button>
 
 
 
@@ -121,6 +51,7 @@
   <!-- Add Firebase products that you want to use -->
   <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-storage.js"></script>
 
     <!--===============================================================================================-->
 	    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
@@ -134,8 +65,7 @@
     <!--===============================================================================================-->
    
     <script type="text/javascript" src="cordova.js"></script>
-    <script src="js/input.js"></script>
-    <script src="js/auth.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
 
 </body>
 

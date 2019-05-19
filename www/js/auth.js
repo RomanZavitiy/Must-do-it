@@ -24,9 +24,17 @@ btnLogin.addEventListener('click', e => {
 
     const auth = firebase.auth();
 
+    const span_error = document.getElementById('allert_error');
     // sing in
     const promis = auth.signInWithEmailAndPassword(email, pass);
-    promis.catch(e => console.log(e.message));  
+    promis.catch(e => {console.log(e.message)
+      
+      if(e.message == 'There is no user record corresponding to this identifier. The user may have been deleted.') 
+      {span_error.textContent = e.message;}
+      if (e.message == 'The password is invalid or the user does not have a password.') {
+        span_error.textContent = e.message;
+      }
+    });  
 
 
     if ( txtEmail.value == "") {
@@ -40,6 +48,7 @@ btnLogin.addEventListener('click', e => {
     if ( txtPass.value == "" ) {
       $('#txtPass').parent().addClass('alert-validate');
   } 
+
 });
 
 // //add sign up event
@@ -60,6 +69,7 @@ btnLogin.addEventListener('click', e => {
 firebase.auth().onAuthStateChanged(firebaseUser => {
   if (firebaseUser) {
     console.log(firebaseUser);
+    window.location.href="app.html";
   } else {
     console.log('not logged in');
   }

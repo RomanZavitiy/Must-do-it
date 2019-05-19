@@ -26,7 +26,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <!--===============================================================================================-->
 
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
@@ -35,7 +34,7 @@
 
 <body>
     <!-- -----------------------------signup---------------- -->
-    <div class="limiter ds_none">
+    <div class="limiter" id="limiter">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-31 p-b-31">
 				<form class="login100-form validate-form">
 					<span class="login100-form-title p-b-60">
@@ -76,7 +75,7 @@
 	</div>
     <!-- NEXT STEP  -->
     <!-- -----------------------------LOGIN---------------- -->
-    <div class="limiter2">
+    <div class="limiter2 ds_none" id="limiter2">
         <div class="wrap-login100 p-l-55 p-r-55 p-t-31 p-b-31">
             <form class="login100-form validate-form">
                 <span class="login100-form-title p-b-60">
@@ -127,7 +126,7 @@
   <!-- Add Firebase products that you want to use -->
   <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-database.js"></script>
-  
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-storage.js"></script>
 
     <!--===============================================================================================-->
 	    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
@@ -141,7 +140,6 @@
     <!--===============================================================================================-->
    
     <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
     <script src="js/input.js"></script>
     <script src="js/signup.js"></script>
 </body>

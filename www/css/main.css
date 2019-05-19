@@ -528,4 +528,13 @@ iframe {
   margin: 15px 50% 15px 50%;
   transform: translate(-50%);
   background-color: white;
+
+}
+#allert_error {
+  position: absolute;
+  color: red;
+  margin-left: 50%;
+  transform: translate(-50%);
+  width: 100%;
+  text-align: center;
 }

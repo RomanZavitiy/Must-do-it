@@ -9,6 +9,7 @@
         $(this).on('blur', function(){
             if($(this).val().trim() != "") {
                 $(this).addClass('has-val');
+                $(this).parent().removeClass('alert-validate');
             }
             else {
                 $(this).removeClass('has-val');
