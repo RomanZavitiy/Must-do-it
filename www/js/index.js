@@ -1,12 +1,13 @@
 (function () {
     // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyBuFYodHPQNjoV6XcsxL2LX10xJG17D1ZQ",
-    authDomain: "must-do-it.firebaseapp.com",
-    databaseURL: "https://must-do-it.firebaseio.com",
-    projectId: "must-do-it",
-    storageBucket: "must-do-it.appspot.com",
-    messagingSenderId: "392509090934"
+    apiKey: "AIzaSyAy9U-DI5_Auunvv6FpJBk0ap6-HMj7t7Q",
+    authDomain: "must-do-it-app.firebaseapp.com",
+    databaseURL: "https://must-do-it-app.firebaseio.com",
+    projectId: "must-do-it-app",
+    storageBucket: "must-do-it-app.appspot.com",
+    messagingSenderId: "1044850677916",
+    appId: "1:1044850677916:web:fca90e2c2ad5a636"
   };
   firebase.initializeApp(config);
 
@@ -27,13 +28,21 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
         }).catch(function(error) {
           // Handle any errors
           console.log(error);
+          if(error) {
+            profImg.src = firebaseUser.photoURL;
+          }
         });
+
+        $('#userName').text(firebaseUser.displayName);
     
     } else {
       console.log('not logged in');
     }
   });
   
-  document.getElementById('logOut').addEventListener('click', e => firebase.auth().signOut() );
+  document.getElementById('logOut').addEventListener('click', e => {
+    firebase.auth().signOut();
+    window.location.href="index.html";
+  });
 
       }());

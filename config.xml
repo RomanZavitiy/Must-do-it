@@ -114,4 +114,11 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
+
+    <universal-links>
+    <host name="mustdoit.page.link" scheme="https" />
+    <host name="com.mustdoit.app" scheme="https">
+        <path url="/__/auth/callback"/>
+    </host>
+</universal-links>
 </widget>

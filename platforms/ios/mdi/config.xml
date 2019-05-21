@@ -108,4 +108,17 @@
     <preference name="PaginationMode" value="unpaginated" />
     <preference name="CameraUsesGeolocation" value="false" />
     <preference name="android-minSdkVersion" value="14" />
+    <feature name="UniversalLinks">
+        <param name="ios-package" value="CULPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="BuildInfo">
+        <param name="ios-package" value="CDVBuildInfo" />
+    </feature>
+    <feature name="BrowserTab">
+        <param name="ios-package" value="CBTBrowserTab" />
+    </feature>
+    <feature name="InAppBrowser">
+        <param name="ios-package" value="CDVInAppBrowser" />
+    </feature>
 </widget>

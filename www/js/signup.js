@@ -1,14 +1,15 @@
 
 (function () {
     // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBuFYodHPQNjoV6XcsxL2LX10xJG17D1ZQ",
-    authDomain: "must-do-it.firebaseapp.com",
-    databaseURL: "https://must-do-it.firebaseio.com",
-    projectId: "must-do-it",
-    storageBucket: "must-do-it.appspot.com",
-    messagingSenderId: "392509090934"
-  };
+    var config = {
+      apiKey: "AIzaSyAy9U-DI5_Auunvv6FpJBk0ap6-HMj7t7Q",
+      authDomain: "must-do-it-app.firebaseapp.com",
+      databaseURL: "https://must-do-it-app.firebaseio.com",
+      projectId: "must-do-it-app",
+      storageBucket: "must-do-it-app.appspot.com",
+      messagingSenderId: "1044850677916",
+      appId: "1:1044850677916:web:fca90e2c2ad5a636"
+    };
   firebase.initializeApp(config);
 
 
@@ -35,7 +36,7 @@ btnSignup.addEventListener('click', e => {
   const auth = firebase.auth();
 
   let complite = 0;
-  // validate -------------------------------------
+  // validate ------------------------------------------------------------------------------------
 
   if ( txtUserEmail.value == "") {
     $('#txtUserEmail').parent().attr('data-validate', 'Email is required').addClass('alert-validate');
@@ -61,7 +62,7 @@ if ( txtUserPass2.value == "" ) {
 }
 // console.log(complite);
 
-  // next
+  // next BUTTON ------------------------------------------------------------------------------------------------
 if (complite == 3)  { const promis = auth.createUserWithEmailAndPassword(email, pass);
   promis.catch(function (e) {
     
@@ -109,7 +110,7 @@ let userLoadPhoto = 0;
   }
   });
 
-// PHOTOS
+// PHOTOS/////////////////////////////////////////////////////////
 const btnPhotos = document.getElementById('btnPhoto');
 
 btnPhotos.addEventListener('click', cameraGetPicture);
@@ -132,7 +133,7 @@ function cameraGetPicture() {
   }
 
 }
-// akceptacja rejestracji
+// akceptacja rejestracji ////////////////////////////////////////////////////////
   btnRegDone.addEventListener('click', e => {
     user = firebase.auth().currentUser;
 
