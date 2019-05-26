@@ -10,6 +10,7 @@
       appId: "1:1044850677916:web:fca90e2c2ad5a636"
     };
   firebase.initializeApp(config);
+  
 
 // get elements
 const txtEmail = document.getElementById('txtEmail');
@@ -53,28 +54,13 @@ btnLogin.addEventListener('click', e => {
 });
 
   // GOOGLE SIGN UP -----------------------------------------------------------------------------------
+
   const google_btn = document.getElementById('google_btn');
   
-  var provider = new firebase.auth.GoogleAuthProvider();
+
   google_btn.addEventListener('click', function() {
-    // firebase.auth().signInWithPopup(provider).then(function(result) {
-    //   // This gives you a Google Access Token. You can use it to access the Google API.
-    //   var token = result.credential.accessToken;
-    //   // The signed-in user info.
-    //   var user = result.user;
-    //   // ...
-    // }).catch(function(error) {
-    //   // Handle Errors here.
-    //   var errorCode = error.code;
-    //   var errorMessage = error.message;
-    //   // The email of the user's account used.
-    //   var email = error.email;
-    //   // The firebase.auth.AuthCredential type that was used.
-    //   var credential = error.credential;
-    //   // ...
-    //   console.log(error.message);
-    // });
-  
+    var provider = new firebase.auth.GoogleAuthProvider();
+
     firebase.auth().signInWithRedirect(provider).then(function() {
       return firebase.auth().getRedirectResult();
     }).then(function(result) {
@@ -91,9 +77,90 @@ btnLogin.addEventListener('click', e => {
       var errorMessage = error.message;
     });
     
+    // firebase.auth().signInWithPopup(provider).then(function(result) {
+    //   // This gives you a Google Access Token. You can use it to access the Google API.
+    //   var token = result.credential.accessToken;
+    //   // The signed-in user info.
+    //   var user = result.user;
+    //   // ...
+    // }).catch(function(error) {
+    //   // Handle Errors here.
+    //   var errorCode = error.code;
+    //   var errorMessage = error.message;
+    //   // The email of the user's account used.
+    //   var email = error.email;
+    //   // The firebase.auth.AuthCredential type that was used.
+    //   var credential = error.credential;
+    //   // ...
+    // });
+  
 
   });
  
+  // sign up with facebook
+  const facebook_btn = document.getElementById('facebook_btn');
+
+  facebook_btn.addEventListener('click', function() {
+
+    var provider = new firebase.auth.FacebookAuthProvider();
+
+    // firebase.auth().signInWithPopup(provider).then(function(result) {
+    //   // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+    //   var token = result.credential.accessToken;
+    //   // The signed-in user info.
+    //   var user = result.user;
+    //   // ...
+    // }).catch(function(error) {
+    //   // Handle Errors here.
+    //   var errorCode = error.code;
+    //   var errorMessage = error.message;
+    //   // The email of the user's account used.
+    //   var email = error.email;
+    //   // The firebase.auth.AuthCredential type that was used.
+    //   var credential = error.credential;
+    //   // ...
+    // });
+
+    firebase.auth().signInWithRedirect(provider);
+    firebase.auth().getRedirectResult().then(function(result) {
+      if (result.credential) {
+        // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+        var token = result.credential.accessToken;
+        // ...
+      }
+      // The signed-in user info.
+      var user = result.user;
+    }).catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // The email of the user's account used.
+      var email = error.email;
+      // The firebase.auth.AuthCredential type that was used.
+      var credential = error.credential;
+      // ...
+    });
+  });
+
+  // FORGOT PASS LINK
+  document.getElementById('forgotPass').addEventListener('click', function() {
+    var auth = firebase.auth();
+    let emailAddress = txtEmail.value;
+
+
+    if( emailAddress == "" ) {
+      $('#txtEmail').parent().attr('data-validate', 'Email is required').addClass('alert-validate');
+    } else {
+      auth.sendPasswordResetEmail(emailAddress).then(function() {
+        // Email sent.
+        console.log('sent');
+        }).catch(function(error) {
+        // An error happened.
+        });
+    }
+
+  });
+
 //add a realtime listener
 firebase.auth().onAuthStateChanged(firebaseUser => {
   if (firebaseUser) {

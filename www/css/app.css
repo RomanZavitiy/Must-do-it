@@ -6,6 +6,23 @@
   transform: translate(-50%); */
   background-color: white;
 }
+#userName {
+  color: #6a27d2;
+}
+/* LOGOUT BTN */
+#logOut {
+    margin: 0 10px;
+    padding: 10px 10px;
+    overflow: hidden;
+    font-size: 15px;
+    color: white;
+    letter-spacing: 1px;    
+    text-transform: uppercase;
+    border-width: 0;    
+    outline: none;
+  	background: linear-gradient(90deg, #49c2ff, #6a27d2);
+}
+/* --------------------------------- */
 .limiter {
   padding: 10px 10px;
 }
@@ -19,12 +36,12 @@
 .header {
   padding: 5px 10px;
 }
+/* WEATHER ////////////////////////////////////// */
 .weather {
   height: 150px;
 }
-.weather_block {
-  height: 100px;
-}
+
+/* TO DO LIST ////////////////////////////////// */
 .to_do_list {
   height: 300px;
 }

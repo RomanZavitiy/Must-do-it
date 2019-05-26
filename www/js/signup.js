@@ -153,9 +153,10 @@ function cameraGetPicture() {
 
     storageRef.putString(photoUrl, 'data_url').then(function(snapshot) {
       console.log('Uploaded a data_url string!');
+      window.location.href="app.html";
     });}
    
-    
+ 
     // UPDATE PROFILE///////////////////////////////////////////////
     if (complit == 1) {
       user.updateProfile({
@@ -163,13 +164,12 @@ function cameraGetPicture() {
       }).then(function() {
         // Update successful
         console.log('suc');
-        window.location.href="app.html";
+        success++;
       }).catch(function(error) {
         // An error happened. 
       });
       
     } 
-
 
 
   });
