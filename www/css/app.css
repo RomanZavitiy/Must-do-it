@@ -51,3 +51,48 @@
 .fast_sms {
   height: 150px;
 }
+
+/* WEATHER ////////////////////////////////////// */
+.weather {
+  height: 150px;
+}
+.limiter .weather_block {
+  display: flex;
+  /* justify-content: center; */
+  align-content: center;
+  padding: 10px 10px;
+  height: 100px;
+  background-color: #fff;
+  border-bottom: 1px solid blueviolet;
+}
+.limiter .weather_block .weather_now {
+  background-color: #fff;
+  width: 100%;
+}
+.limiter .weather_block .weather_now img {
+  float: left;
+}
+#weather_data {
+  color: blueviolet;
+}
+#weather_temp {
+  float: left;
+  font-size: 20px;
+  color: blueviolet;
+  font-weight: bold;
+}
+.limiter .weather_block .weather_later {
+  width: 50%;
+  height: 100%;
+  font-size: 13px;
+  background-color: #fcfcfc;
+  border-left: 1px solid blueviolet;
+}
+.limiter .weather_block .weather_later img {
+  width: 30px;
+  height: 30px;
+}
+.limiter .weather_block .weather_later .wlsh {
+  color: blueviolet;
+  font-weight: bolder;
+}
