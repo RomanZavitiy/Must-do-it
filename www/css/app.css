@@ -40,6 +40,16 @@
 .weather {
   height: 150px;
 }
+/* AIR BLOCK ////////////////////////////////////// */
+.limiter .weather .air_block {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 50px;
+  padding-top: 7px;
+  font-size: 20px;
+  font-style: italic;
+}
 
 /* TO DO LIST ////////////////////////////////// */
 .to_do_list {
