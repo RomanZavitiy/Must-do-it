@@ -142,24 +142,24 @@ btnLogin.addEventListener('click', e => {
     });
   });
 
-  // FORGOT PASS LINK
-  document.getElementById('forgotPass').addEventListener('click', function() {
-    var auth = firebase.auth();
-    let emailAddress = txtEmail.value;
-
-
-    if( emailAddress == "" ) {
-      $('#txtEmail').parent().attr('data-validate', 'Email is required').addClass('alert-validate');
-    } else {
-      auth.sendPasswordResetEmail(emailAddress).then(function() {
-        // Email sent.
-        console.log('sent');
-        }).catch(function(error) {
-        // An error happened.
-        });
-    }
-
-  });
+    // FORGOT PASS LINK
+    document.getElementById('forgotPass').addEventListener('click', function() {
+      const auth = firebase.auth();
+      let emailAddress = txtEmail.value;
+  
+  
+      if( emailAddress == "" ) {
+        $('#txtEmail').parent().attr('data-validate', 'Email is required').addClass('alert-validate');
+      } else {
+        auth.sendPasswordResetEmail(emailAddress).then(function() {
+          // Email sent.
+          console.log('sent');
+          }).catch(function(error) {
+          // An error happened.
+          });
+      }
+  
+    });
 
 //add a realtime listener
 firebase.auth().onAuthStateChanged(firebaseUser => {

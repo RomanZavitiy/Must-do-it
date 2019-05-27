@@ -36,21 +36,6 @@
 .header {
   padding: 5px 10px;
 }
-/* WEATHER ////////////////////////////////////// */
-.weather {
-  height: 150px;
-}
-
-/* TO DO LIST ////////////////////////////////// */
-.to_do_list {
-  height: 300px;
-}
-.calendar {
-  height: 150px;
-}
-.fast_sms {
-  height: 150px;
-}
 
 /* WEATHER ////////////////////////////////////// */
 .weather {
@@ -64,6 +49,7 @@
   height: 100px;
   background-color: #fff;
   border-bottom: 1px solid blueviolet;
+  margin: 0;
 }
 .limiter .weather_block .weather_now {
   background-color: #fff;
@@ -80,6 +66,8 @@
   font-size: 20px;
   color: blueviolet;
   font-weight: bold;
+  position: absolute;
+  margin: -25px 0px 0px -188px;
 }
 .limiter .weather_block .weather_later {
   width: 50%;
@@ -95,4 +83,14 @@
 .limiter .weather_block .weather_later .wlsh {
   color: blueviolet;
   font-weight: bolder;
+}
+/* TO DO LIST ////////////////////////////////// */
+.to_do_list {
+  height: 300px;
+}
+.calendar {
+  height: 150px;
+}
+.fast_sms {
+  height: 150px;
 }
