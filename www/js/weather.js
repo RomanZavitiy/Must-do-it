@@ -2,7 +2,7 @@ document.addEventListener("deviceready", onDeviceReady(), false);
 
 function onDeviceReady() {
     // Now safe to use device APIs
-    console.log('ready!');
+    // console.log('ready!');
     // const weather_info = document.getElementById('weather_info');
     const weather_icon = document.getElementById('weather_icon');
     const wls = document.getElementsByClassName('wls');
