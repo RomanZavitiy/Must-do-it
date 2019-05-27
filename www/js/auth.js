@@ -121,7 +121,7 @@ btnLogin.addEventListener('click', e => {
     //   // ...
     // });
 
-    firebase.auth().signInWithRedirect(provider);
+    firebase.auth().signInWithRedirect(provider).then(function() {
     firebase.auth().getRedirectResult().then(function(result) {
       if (result.credential) {
         // This gives you a Facebook Access Token. You can use it to access the Facebook API.
@@ -139,6 +139,7 @@ btnLogin.addEventListener('click', e => {
       // The firebase.auth.AuthCredential type that was used.
       var credential = error.credential;
       // ...
+    });
     });
   });
 
