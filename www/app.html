@@ -59,7 +59,30 @@
             </div>
         </div>
         <div class="to_do_list divs">
-            
+            <!-- <span>TO DO LIST</span> -->
+            <div class="app">
+                    <div class="app__header">
+                        <div class="app__title"><span class="app__title-text">To Do List</span></div>
+                        <div class="app__info">
+                            <div class="app__info-item">
+                                <span class="app__info-text">Tasks</span>
+                                <span class="app__info-number" id="js-all-tasks"></span>
+                            </div>
+                            <div class="app__info-item">
+                                <span class="app__info-text">Done</span>
+                                <span class="app__info-number" id="js-done-tasks"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="app__body">
+                        <ul class="app__list" id="app__list"></ul>
+                    </div>
+                    <div class="app__footer">
+                        <input class="app__task-new" id="app__task-new" placeholder="Add new task">
+                        <button type="button" id="add_tsk">Add</button>
+                    </div>
+                </div>
+
         </div>
         <div class="calendar divs">
             <span>CALENDAR</span>
@@ -103,6 +126,8 @@
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/weather.js"></script>
     <script type="text/javascript" src="js/air.js"></script>
+    <script type="text/javascript" src="js/todolist.js"></script>
+
 
 </body>
 
