@@ -9,6 +9,30 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       ]
     },
     {
+      "id": "cordova-plugin-browsertab.BrowserTab",
+      "file": "plugins/cordova-plugin-browsertab/www/browsertab.js",
+      "pluginId": "cordova-plugin-browsertab",
+      "clobbers": [
+        "cordova.plugins.browsertab"
+      ]
+    },
+    {
+      "id": "cordova-plugin-buildinfo.BuildInfo",
+      "file": "plugins/cordova-plugin-buildinfo/www/buildinfo.js",
+      "pluginId": "cordova-plugin-buildinfo",
+      "clobbers": [
+        "BuildInfo"
+      ]
+    },
+    {
+      "id": "cordova-plugin-calendar.Calendar",
+      "file": "plugins/cordova-plugin-calendar/www/Calendar.js",
+      "pluginId": "cordova-plugin-calendar",
+      "clobbers": [
+        "Calendar"
+      ]
+    },
+    {
       "id": "cordova-plugin-camera.Camera",
       "file": "plugins/cordova-plugin-camera/www/CameraConstants.js",
       "pluginId": "cordova-plugin-camera",
@@ -142,6 +166,14 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "pluginId": "cordova-plugin-contacts",
       "merges": [
         "Contact"
+      ]
+    },
+    {
+      "id": "cordova-plugin-customurlscheme.LaunchMyApp",
+      "file": "plugins/cordova-plugin-customurlscheme/www/ios/LaunchMyApp.js",
+      "pluginId": "cordova-plugin-customurlscheme",
+      "clobbers": [
+        "window.plugins.launchmyapp"
       ]
     },
     {
@@ -372,81 +404,22 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
         "cordova"
       ],
       "runs": true
-    },
-    {
-      "id": "cordova-plugin-file-transfer.FileTransferError",
-      "file": "plugins/cordova-plugin-file-transfer/www/FileTransferError.js",
-      "pluginId": "cordova-plugin-file-transfer",
-      "clobbers": [
-        "window.FileTransferError"
-      ]
-    },
-    {
-      "id": "cordova-plugin-file-transfer.FileTransfer",
-      "file": "plugins/cordova-plugin-file-transfer/www/FileTransfer.js",
-      "pluginId": "cordova-plugin-file-transfer",
-      "clobbers": [
-        "window.FileTransfer"
-      ]
-    },
-    {
-      "id": "cordova-universal-links-plugin.universalLinks",
-      "file": "plugins/cordova-universal-links-plugin/www/universal_links.js",
-      "pluginId": "cordova-universal-links-plugin",
-      "clobbers": [
-        "universalLinks"
-      ]
-    },
-    {
-      "id": "cordova-plugin-buildinfo.BuildInfo",
-      "file": "plugins/cordova-plugin-buildinfo/www/buildinfo.js",
-      "pluginId": "cordova-plugin-buildinfo",
-      "clobbers": [
-        "BuildInfo"
-      ]
-    },
-    {
-      "id": "cordova-plugin-browsertab.BrowserTab",
-      "file": "plugins/cordova-plugin-browsertab/www/browsertab.js",
-      "pluginId": "cordova-plugin-browsertab",
-      "clobbers": [
-        "cordova.plugins.browsertab"
-      ]
-    },
-    {
-      "id": "cordova-plugin-inappbrowser.inappbrowser",
-      "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
-      "pluginId": "cordova-plugin-inappbrowser",
-      "clobbers": [
-        "cordova.InAppBrowser.open",
-        "window.open"
-      ]
-    },
-    {
-      "id": "cordova-plugin-customurlscheme.LaunchMyApp",
-      "file": "plugins/cordova-plugin-customurlscheme/www/ios/LaunchMyApp.js",
-      "pluginId": "cordova-plugin-customurlscheme",
-      "clobbers": [
-        "window.plugins.launchmyapp"
-      ]
     }
   ];
   module.exports.metadata = {
     "cordova-plugin-battery-status": "1.1.2",
-    "cordova-plugin-camera": "2.1.1",
     "cordova-plugin-compat": "1.2.0",
+    "cordova-plugin-browsertab": "0.2.0",
+    "cordova-plugin-buildinfo": "2.0.2",
+    "cordova-plugin-calendar": "5.1.4",
+    "cordova-plugin-camera": "2.1.1",
     "cordova-plugin-console": "1.0.7",
     "cordova-plugin-contacts": "2.0.1",
+    "cordova-plugin-customurlscheme": "4.4.0",
     "cordova-plugin-device": "1.1.7",
     "cordova-plugin-device-motion": "1.2.5",
     "cordova-plugin-device-orientation": "1.0.7",
     "cordova-plugin-dialogs": "1.2.1",
-    "cordova-plugin-file": "6.0.1",
-    "cordova-plugin-file-transfer": "1.5.1",
-    "cordova-universal-links-plugin": "1.2.1",
-    "cordova-plugin-buildinfo": "2.0.2",
-    "cordova-plugin-browsertab": "0.2.0",
-    "cordova-plugin-inappbrowser": "1.3.0",
-    "cordova-plugin-customurlscheme": "4.4.0"
+    "cordova-plugin-file": "6.0.1"
   };
 });
