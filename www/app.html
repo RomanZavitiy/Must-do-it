@@ -38,7 +38,7 @@
     <!-- -----------------------------LOGIN---------------- -->
     <div class="limiter">
         
-        <div class="weather">
+        <div class="weather divs">
             <div class="weather_block">
                     <div class="weather_now">
                             <img src="" alt="weather icon" id="weather_icon">
@@ -54,16 +54,40 @@
                     </div>
             </div>
             <div class="air_block">
-                <span>AIR</span>
+                <!-- <span>Level of pollution: <span id="air_level"></span></span><br> -->
+                <span id="air_status">AIR</span>
             </div>
         </div>
-        <div class="to_do_list">
-            <span>TO DO LIST</span>
+        <div class="to_do_list divs">
+            <!-- <span>TO DO LIST</span> -->
+            <div class="app">
+                    <div class="app__header">
+                        <div class="app__title"><span class="app__title-text">To Do List</span></div>
+                        <div class="app__info">
+                            <div class="app__info-item">
+                                <span class="app__info-text">Tasks</span>
+                                <span class="app__info-number" id="js-all-tasks"></span>
+                            </div>
+                            <div class="app__info-item">
+                                <span class="app__info-text">Done</span>
+                                <span class="app__info-number" id="js-done-tasks"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="app__body">
+                        <ul class="app__list" id="app__list"></ul>
+                    </div>
+                    <div class="app__footer">
+                        <input class="app__task-new" id="app__task-new" placeholder="Add new task">
+                        <button type="button" id="add_tsk">Add</button>
+                    </div>
+                </div>
+
         </div>
-        <div class="calendar">
+        <div class="calendar divs">
             <span>CALENDAR</span>
         </div>
-        <div class="fast_sms">
+        <div class="fast_sms divs">
             <span>FAST SMS</span>
         </div>
 	</div>
@@ -77,7 +101,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-       
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
 
@@ -100,6 +125,10 @@
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/weather.js"></script>
+    <script type="text/javascript" src="js/air.js"></script>
+    <script type="text/javascript" src="js/todolist.js"></script>
+
+
 </body>
 
 </html>
