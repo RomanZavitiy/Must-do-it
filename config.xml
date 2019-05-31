@@ -116,9 +116,9 @@
     </platform>
 
     <universal-links>
-        <host name="mustdoit.page.link" scheme="https" />
-        <host name="must-do-it-app.firebaseapp.com" scheme="https">
-            <path url="/__/auth/callback"/>
-        </host>
-    </universal-links>
+    <host name="mustdoit.page.link" scheme="https" />
+    <host name="must-do-it-app.firebaseapp.com" scheme="https">
+        <path url="/__/auth/callback"/>
+    </host>
+</universal-links>
 </widget>
