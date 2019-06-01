@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css 'unsafe-inline'; media-src *" /> -->
+    
+    <!-- <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase.js"></script> -->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!--===============================================================================================-->	
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+
+    <link rel="stylesheet" type="text/css" href="css/app.css" />
+    <title>Must do it</title>
+</head>
+
+<body>
+        <div class="header navbar navbar-light bg-light">
+                <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="" id="profileImg">
+                <span id="userName"></span>
+                <button type="button" id="logOut">Log Out</button>
+            </div>
+    <!-- -----------------------------LOGIN---------------- -->
+    <div class="limiter">
+        
+        <div class="weather divs">
+            <div class="weather_block">
+                    <div class="weather_now">
+                            <img src="" alt="weather icon" id="weather_icon">
+                            <h4 id="city_name">City</h4>
+                            <span id="weather_data"></span><br>
+                            <span id="weather_info">WEATHER</span>
+                            <span id="weather_temp"></span>
+                    </div>
+                    <div class="weather_later">
+                        <span class="wls"></span> <img src="" alt="" class="wli"> <span class="wlsh"></span><br>
+                        <span class="wls"></span> <img src="" alt="" class="wli"> <span class="wlsh"></span><br>
+                        <span class="wls"></span> <img src="" alt="" class="wli"> <span class="wlsh"></span>
+                    </div>
+            </div>
+            <div class="air_block">
+                <!-- <span>Level of pollution: <span id="air_level"></span></span><br> -->
+                <span id="air_status">AIR</span>
+            </div>
+        </div>
+        <div class="to_do_list divs">
+            <!-- <span>TO DO LIST</span> -->
+            <div class="app">
+                    <div class="app__header">
+                        <div class="app__title"><span class="app__title-text">To Do List</span></div>
+                        <div class="app__info">
+                            <div class="app__info-item">
+                                <span class="app__info-text">Tasks</span>
+                                <span class="app__info-number" id="js-all-tasks"></span>
+                            </div>
+                            <div class="app__info-item">
+                                <span class="app__info-text">Done</span>
+                                <span class="app__info-number" id="js-done-tasks"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="app__body">
+                        <ul class="app__list" id="app__list"></ul>
+                    </div>
+                    <div class="app__footer">
+                        <input class="app__task-new" id="app__task-new" placeholder="Add new task">
+                        <button type="button" id="add_tsk">Add</button>
+                    </div>
+                </div>
+
+        </div>
+        <div class="calendar divs">
+            <span>CALENDAR</span>
+        </div>
+        <div class="fast_sms divs">
+            <span>FAST SMS</span>
+        </div>
+	</div>
+	
+
+
+
+
+ <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-storage.js"></script>
+
+    <!--===============================================================================================-->
+	    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+        <script src="vendor/animsition/js/animsition.min.js"></script>
+        <script src="vendor/bootstrap/js/popper.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <script src="vendor/select2/select2.min.js"></script>
+        <script src="vendor/daterangepicker/moment.min.js"></script>
+        <script src="vendor/daterangepicker/daterangepicker.js"></script>
+        <script src="vendor/countdowntime/countdowntime.js"></script>
+    <!--===============================================================================================-->
+   
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/weather.js"></script>
+    <script type="text/javascript" src="js/air.js"></script>
+    <script type="text/javascript" src="js/todolist.js"></script>
+    <script type="text/javascript" src="js/google.js"></script>
+    
+
+
+</body>
+
+</html>

@@ -22,10 +22,10 @@
 	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
 	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
 	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">	
-	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <!--===============================================================================================-->
 
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
@@ -34,7 +34,7 @@
 
 <body>
     <!-- -----------------------------signup---------------- -->
-    <div class="limiter ds_none">
+    <div class="limiter" id="limiter">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-31 p-b-31">
 				<form class="login100-form validate-form">
 					<span class="login100-form-title p-b-60">
@@ -75,21 +75,28 @@
 	</div>
     <!-- NEXT STEP  -->
     <!-- -----------------------------LOGIN---------------- -->
-    <div class="limiter2">
+    <div class="limiter2 ds_none" id="limiter2">
         <div class="wrap-login100 p-l-55 p-r-55 p-t-31 p-b-31">
             <form class="login100-form validate-form">
                 <span class="login100-form-title p-b-60">
                     Must do it
                 </span>
-                <div class="wrap-input100 validate-input m-b-13" data-validate = "Username is reauired">
+                <div class="wrap-input100 validate-input m-b-33" data-validate = "Username is reauired">
                     <span class="label-input100">Username</span>
                     <input id="txtUserName" class="input100" type="text" name="username" placeholder="Type your name">
                     <span class="focus-input100" data-symbol="&#xf206;"></span>
                 </div>
-                <div class="wrap-input100 validate-input m-b-13" data-validate = "Username is reauired">
-                    <span class="label-input100">Photo</span>
-                    <input id="txtUserPhoto" class="input100" type="text" name="username" placeholder="Your photo">
-                    <span class="focus-input100" data-symbol="&#xf206;"></span>
+                <div class="wrap-input100 validate-input m-b-53" >
+                    
+                    <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="myimg" id="myImg">
+            
+                    <button id="btnCamera" type="button">
+                        <i class="fas fa-camera-retro"></i>
+                    </button>
+                    <button id="btnPhoto" type="button">
+                        <i class="fas fa-folder"></i>
+                    </button>
+                    <span class="focus-input100"></span>
                 </div>
                 <div class="container-login100-form-btn">
                     <div class="wrap-login100-form-btn">
@@ -119,6 +126,7 @@
   <!-- Add Firebase products that you want to use -->
   <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-storage.js"></script>
 
     <!--===============================================================================================-->
 	    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
@@ -132,7 +140,6 @@
     <!--===============================================================================================-->
    
     <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
     <script src="js/input.js"></script>
     <script src="js/signup.js"></script>
 </body>

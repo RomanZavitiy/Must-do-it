@@ -206,7 +206,45 @@
     },
     "is_top_level": true,
     "variables": {
-      "URL_SCHEME": "com.mustdoit.app"
+      "URL_SCHEME": "com.must-do-it-ios.app"
     }
+  },
+  "cordova-plugin-calendar": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-calendar@5.1.4"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-plugin-facebook4": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-facebook4"
+    },
+    "is_top_level": true,
+    "variables": {
+      "APP_ID": "676819032747953",
+      "APP_NAME": "must-do-it-app"
+    }
+  },
+  "cordova-plugin-googleplus": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-plugin-googleplus"
+    },
+    "is_top_level": true,
+    "variables": {
+      "REVERSED_CLIENT_ID": "com.googleusercontent.apps.1044850677916-7lqco5bsvldbdkc46pspac8fhqacqdf8",
+      "WEB_APPLICATION_CLIENT_ID": "1044850677916-cvk1qgad9lgu4j2jcitn02olmfagj7nr.apps.googleusercontent.com"
+    }
+  },
+  "cordova-sms-plugin": {
+    "source": {
+      "type": "registry",
+      "id": "cordova-sms-plugin"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }
