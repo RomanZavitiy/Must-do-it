@@ -191,23 +191,25 @@
                   destinationType: Camera.DestinationType.DATA_URL });
               
               function onSuccess(imageURL) {
-                //   var image = document.getElementById('big_img');
+                  var image = document.getElementById('big_img');
                   let img_url = "data:image/jpeg;base64," + imageURL;
                   // console.log(imageURL);
                 //   userLoadPhoto++;
-                
+                image.href = img_url;
     
                 var storageRef = firebase.storage().ref('imgtodo/' + userUID + '.jpeg');
             
                 storageRef.putString(img_url, 'data_url').then(function(snapshot) {
                   console.log('Uploaded a data_url string!');
                 });
-                load_photo();
+                
               }
               
               function onFail(message) {
                   alert('Failed because: ' + message);
               }
+
+            //   load_photo();
               });
               
               
