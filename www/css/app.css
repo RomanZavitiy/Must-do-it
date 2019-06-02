@@ -355,3 +355,6 @@ li {
   font-size: 20px;
   font-style: italic;
 }
+#ui-datepicker-div {
+  width: 100%;
+}
