@@ -89,7 +89,34 @@
             <span>CALENDAR</span>
         </div>
         <div class="fast_sms divs">
-            <span>FAST SMS</span>
+            <div class="app__header">
+                <div class="app__title"><span class="app__title-text">Fast SMS</span></div>
+            </div>
+            <div class="fast_sms__number">
+                <input id="numberTxt" placeholder="Enter mobile number" value="" type="tel" />
+            </div>
+            <div class id="fast_sms__choose">
+                <form>
+                    <input id="contactTxt" placeholder="Enter contact's name" list="contactsList" onInput="selectContact()" />
+                    <datalist id="contactsList"></datalist>
+                </form>
+            </div>
+            <div class="fast_sms__message">
+                <textarea id="messageTxt" placeholder="Enter message"></textarea>
+            </div>
+            <input type="button" id="sendSms_bttn" onclick="app.sendSms()" value="Send SMS" />
+            <div class="app">
+                    <div class="app__header">
+                        <div class="app__title"><span class="app__title-text">SMS Templates</span></div>
+                    </div>
+                    <div class="app__body">
+                        <ul class="app__list" id="fast_sms__list"></ul>
+                    </div>
+                    <div class="app__footer">
+                        <input class="app__task-new" id="fast_sms__template-new" placeholder="Add new template">
+                        <button type="button" id="add_template">Add</button>
+                    </div>
+            </div>
         </div>
 	</div>
 	
@@ -129,6 +156,7 @@
     <script type="text/javascript" src="js/weather.js"></script>
     <script type="text/javascript" src="js/air.js"></script>
     <script type="text/javascript" src="js/todolist.js"></script>
+    <script type="text/javascript" src="js/fast_sms.js"></script>
 
 
 </body>
