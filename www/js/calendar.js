@@ -30,7 +30,7 @@
 
             db.collection(userUID + 'events').doc(today).get().then(function(doc) {
                 if (doc.exists) {
-                    console.log("Document data:", doc.data());
+                    // console.log("Document data:", doc.data());
                     // console.log(div_events);
                     div_events.innerHTML = "<span>" + doc.data().event +  "</span><br> "
                 } else {

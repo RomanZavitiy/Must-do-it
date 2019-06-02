@@ -399,13 +399,6 @@ button.ui-button::-moz-focus-inner {
 .ui-checkboxradio-disabled {
 	pointer-events: none;
 }
-#ui-datepicker-div {
-	width: 100%;
-	left: 0;
-}
-.ui-datepicker .ui-widget .ui-widget-content .ui-helper-clearfix .ui-corner-all div {
-	left: 0;
-}
 .ui-datepicker {
 	width: 17em;
 	padding: .2em .2em 0;

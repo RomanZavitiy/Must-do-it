@@ -246,3 +246,112 @@ li {
     padding: 0 10px 0 10px;
     background-color: #fff;
   }
+/* calendar///////////////////////////////////// */
+.calendar {
+  height: 200px;
+  background-color: #fe3eff2e;
+}
+#sms_app {
+  background-color: #526be640;
+}
+
+.fast_sms {
+  height: 470px;
+  margin-top: 10px; 
+  color:white;
+  background-color: #f8f9fa;
+}
+.fast_sms__message {
+  margin-bottom: 10px;
+}
+#sendSms_bttn{
+  margin-bottom: 10px;
+  height: 30px;
+  font-size: 15px;
+  color: white;
+  letter-spacing: 1px;    
+  text-transform: uppercase;
+  border-width: 0;    
+  outline: none;
+  background: linear-gradient(90deg, #49c2ff, #6a27d2);
+  width: 80%;
+}
+
+#messageTxt {
+  resize: none;
+  width: 300px;
+  height: 75px;
+  padding: 6px 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+#contactTxt {
+  padding: 6px 10px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+#numberTxt {
+
+  padding: 6px 10px;
+  margin: 6px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+#add_template {
+  margin-bottom: 10px;
+  height: 30px;
+  font-size: 15px;
+  color: white;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-width: 0;
+  outline: none;
+  background: linear-gradient(90deg, #49c2ff, #6a27d2);
+  width: 100%;
+}
+#datepicker,
+#eventName  {
+  /* padding: 6px 10px; */
+    margin: 6px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    text-align: center;
+    width: 38%;
+}
+#event_btn {
+  margin-top: 10px;
+  height: 30px;
+  font-size: 15px;
+  color: white;
+  letter-spacing: 1px;    
+  text-transform: uppercase;
+  border-width: 0;    
+  outline: none;
+  background: linear-gradient(90deg, #49c2ff, #6a27d2);
+  width: 77%;
+
+}
+#today {
+  font-size: 20px;
+  font-weight: bold;
+  color:blue;
+}
+#events {
+  text-align: center;
+  height: 50px;
+  margin-top: 20px;
+  font-size: 20px;
+  font-style: italic;
+}
