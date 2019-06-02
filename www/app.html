@@ -22,8 +22,10 @@
 	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
 	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
 	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">	
-	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <!--===============================================================================================-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 
     <link rel="stylesheet" type="text/css" href="css/app.css" />
     <title>Must do it</title>
@@ -42,10 +44,10 @@
             <div class="weather_block">
                     <div class="weather_now">
                             <img src="" alt="weather icon" id="weather_icon">
+                            <span id="weather_temp"></span>
                             <h4 id="city_name">City</h4>
                             <span id="weather_data"></span><br>
                             <span id="weather_info">WEATHER</span>
-                            <span id="weather_temp"></span>
                     </div>
                     <div class="weather_later">
                         <span class="wls"></span> <img src="" alt="" class="wli"> <span class="wlsh"></span><br>
@@ -81,6 +83,12 @@
                         <input class="app__task-new" id="app__task-new" placeholder="Add new task">
                         <button type="button" id="add_tsk">Add</button>
                         <input type="time" id="time">
+                    </div>
+                    <div class="add_photo">
+                        <button id="btnCamera" type="button">
+                            <i class="fas fa-camera-retro"></i>
+                        </button>
+                        <a data-fancybox="gallery" href="big_1.jpg" id="big_img"><img src="images/to-do.jpg" id="small_img"></a>
                     </div>
                 </div>
 
@@ -123,6 +131,8 @@
         <script src="vendor/daterangepicker/daterangepicker.js"></script>
         <script src="vendor/countdowntime/countdowntime.js"></script>
     <!--===============================================================================================-->
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
    
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>

@@ -62,12 +62,11 @@
   color: blueviolet;
 }
 #weather_temp {
-  float: left;
   font-size: 20px;
   color: blueviolet;
   font-weight: bold;
   position: absolute;
-  margin: -25px 0px 0px -215px;
+  margin: 33px 0px 0px -133px;
 }
 .limiter .weather_block .weather_later {
   width: 50%;
@@ -98,7 +97,7 @@
 
 /* TO DO LIST ////////////////////////////////// */
 .to_do_list {
-  height: 300px;
+  height: 350px;
 }
 
 ul,
@@ -222,7 +221,31 @@ li {
     font-size: 20px;
     font-weight: normal;
   }
-
+  #btnCamera {
+    color: gray;
+    font-size: 30px;
+    border: none;
+    background-color: #fff;
+    float: left;
+  }
+  #btnCamera:hover {
+    color: #6f42c1;
+  }
+  #small_img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+  a {
+    width: 50px;
+    height: 50px;
+    float: right;
+  }
+  .add_photo {
+    display: inline;
+    padding: 0 10px 0 10px;
+    background-color: #fff;
+  }
 /* calendar///////////////////////////////////// */
 .calendar {
   height: 150px;

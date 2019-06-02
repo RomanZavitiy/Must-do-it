@@ -24,6 +24,7 @@
                 doneTasks = document.getElementById("js-done-tasks"),
                 addNewTaskField = document.getElementById("app__task-new"),
                 add_tsk = document.getElementById('add_tsk'),
+                userUID = firebase.auth().currentUser.uid,
                 time_tsk = document.getElementById('time');
         
                 function INIT() {
@@ -168,7 +169,50 @@
                     time_tsk.value = '';
          
             })
+            let image_td = document.getElementById('big_img');
+            function load_photo () {
+                var storageRef = firebase.storage().ref('imgtodo/' + userUID + '.jpeg');
+        // console.log(storageRef);
+        // var gsReference = storage.refFromURL('gs://must-do-it.appspot.com/img/photo.jpg');
+        storageRef.getDownloadURL().then(function(url) {
+          // console.log(url);
+         image_td.href = url;
+    
+        }).catch(function(error) {
+          // Handle any errors
+          console.log(error);
+        });
+            }
+            load_photo();
             
+            const btnCamera = document.getElementById('btnCamera');
+            btnCamera.addEventListener('click', e => {
+                navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+                  destinationType: Camera.DestinationType.DATA_URL });
+              
+              function onSuccess(imageURL) {
+                //   var image = document.getElementById('big_img');
+                  let img_url = "data:image/jpeg;base64," + imageURL;
+                  // console.log(imageURL);
+                //   userLoadPhoto++;
+                
+    
+                var storageRef = firebase.storage().ref('imgtodo/' + userUID + '.jpeg');
+            
+                storageRef.putString(img_url, 'data_url').then(function(snapshot) {
+                  console.log('Uploaded a data_url string!');
+                });
+                load_photo();
+              }
+              
+              function onFail(message) {
+                  alert('Failed because: ' + message);
+              }
+              });
+              
+              
+
+
         } else {
           console.log('not logged in');
         }
