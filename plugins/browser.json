@@ -60,6 +60,9 @@
         },
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "com.mustdoit.app"
+        },
+        "cordova-sms-plugin": {
+            "PACKAGE_NAME": "com.mustdoit.app"
         }
     },
     "dependent_plugins": {

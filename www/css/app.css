@@ -250,6 +250,53 @@ li {
 .calendar {
   height: 150px;
 }
+
 .fast_sms {
-  height: 150px;
+  height: 470px;
+  margin-top: 10px; 
+  color:white;
 }
+
+#sendSms_bttn{
+  margin-bottom: 10px;
+  height: 30px;
+  font-size: 15px;
+  color: white;
+  letter-spacing: 1px;    
+  text-transform: uppercase;
+  border-width: 0;    
+  outline: none;
+  background: linear-gradient(90deg, #49c2ff, #6a27d2);
+  width: 100%;
+}
+
+#messageTxt {
+  resize: none;
+  width: 300px;
+  height: 75px;
+  padding: 6px 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+#contactTxt {
+  padding: 6px 10px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+#numberTxt {
+
+  padding: 6px 10px;
+  margin: 6px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
