@@ -24,6 +24,7 @@
 	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">	
     <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
     <!--===============================================================================================-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 
@@ -94,7 +95,7 @@
 
         </div>
         <div class="calendar divs">
-            <span>CALENDAR</span>
+            
         </div>
         <div class="fast_sms divs">
             <div class="app__header">
@@ -114,7 +115,7 @@
             </div>
             <input type="button" id="sendSms_bttn" onclick="app.sendSms()" value="Send SMS" />
             <div class="app">
-                    <div class="app__header">
+                    <div class="app__header" id="sms_app">
                         <div class="app__title"><span class="app__title-text">SMS Templates</span></div>
                     </div>
                     <div class="app__body">
@@ -167,6 +168,8 @@
     <script type="text/javascript" src="js/air.js"></script>
     <script type="text/javascript" src="js/todolist.js"></script>
     <script type="text/javascript" src="js/fast_sms.js"></script>
+    <script type="text/javascript" src="js/calendar.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
 
 
 </body>
