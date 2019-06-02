@@ -53,21 +53,14 @@ function selectContact() {
     firebase.auth().onAuthStateChanged(firebaseUser => {
         if (firebaseUser) {
         var db = firebase.firestore();
-        let templates = {current: [{templateId: doId(),
-                    templateContent: "Nie mogê teraz rozmawiaæ"},
-                    {templateId: doId(),
-                    templateContent: "Nie ma mnie w domu"},
-                    {templateId: doId(),
-                    templateContent: "Jestem w pracy"}]},
+        let templates = {current: []},
         templatesList = document.getElementById("fast_sms__list"),
         addNewTemplateField = document.getElementById("fast_sms__template-new");
         add_template = document.getElementById('add_template');
         
     function INIT() {
-        for (const item of templates.current) {
-            createItem(item);
-        }
-        let userUID = firebase.auth().currentUser.uid;
+
+        let userUID = firebase.auth().currentUser.uid + 'sms';
         let fb_templates = [];
         firebase.firestore().collection(userUID).get()
                 .then(querySnapshot => {
@@ -77,6 +70,41 @@ function selectContact() {
                 });
             });
     }
+    let userUID = firebase.auth().currentUser.uid;
+    db.collection(userUID + 'smsstart').doc('start_temp').get().then(function(doc) {
+    if (doc.exists) {
+        // console.log("Document data:", doc.data());
+    } else {
+        // doc.data() will be undefined in this case
+        // console.log("No such document!");
+        
+            let start_temps = [{templateId: doId(),
+                templateContent: "Nie moge teraz rozmawiac"},
+                {templateId: doId(),
+                templateContent: "Nie ma mnie w domu"},
+                {templateId: doId(),
+                templateContent: "Jestem w pracy"}]
+            for ( start_temp of start_temps) {
+                createItem(start_temp);
+                let tmplId = start_temp.templateId;
+                let userUID = firebase.auth().currentUser.uid + 'sms';
+                let str = start_temp.templateContent;
+                db.collection(userUID).doc(start_temp.templateId).set({
+                "templateContent": str,
+                "templateId": tmplId
+                
+            });
+        
+            
+            db.collection(userUID + 'start').doc('start_temp').set({
+                "starttemp": "done"
+            });
+        }
+    }
+}).catch(function(error) {
+    console.log("Error getting document:", error);
+});
+
 
     function createItem(el) {
         let item = document.createElement('li'),
@@ -114,8 +142,9 @@ function selectContact() {
             removeElId = removeEl.id,
             removeElState = removeEl.classList;
             removeEl.remove();
-            let userUID = firebase.auth().currentUser.uid;
+            let userUID = firebase.auth().currentUser.uid + 'sms';
             db.collection(userUID).doc(removeElId).delete();
+
     }
 
     function addTemplates(str) {
@@ -127,7 +156,7 @@ function selectContact() {
         templates.current.push(elem);
         createItem(elem);
         let tmplId = elem.templateId;
-        let userUID = firebase.auth().currentUser.uid;
+        let userUID = firebase.auth().currentUser.uid + 'sms';
         db.collection(userUID).doc(elem.templateId).set({
             "templateContent": str,
             "templateId": tmplId
